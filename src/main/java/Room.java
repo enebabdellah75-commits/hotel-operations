@@ -1,38 +1,39 @@
 public class Room {
+
     private int numberOfBeds;
     private double price;
     private boolean occupied;
     private boolean dirty;
+    private boolean avilable;
 
-    //derived getter using other properties on the class
-    public boolean isAvailable() {
+    // Constructor
+    public Room(int numberOfBeds, double price,
+                boolean occupied, boolean dirty) {
 
-        //--fancy one liner
-        // return !dirty && !occupied;
-
-        //full if statement
-        if(dirty == false && occupied == false) {
-            return true;
-        }
-
-        return false;
-
+        this.numberOfBeds = numberOfBeds;
+        this.price = price;
+        this.occupied = occupied;
+        this.dirty = dirty;
     }
 
-    public boolean isDirty() {
-        return dirty;
-    }
-
-    public boolean isOccupied() {
-        return occupied;
+    // Getters
+    public int getNumberOfBeds() {
+        return numberOfBeds;
     }
 
     public double getPrice() {
         return price;
     }
 
-    public int getNumberOfBeds() {
-        return numberOfBeds;
+    public boolean isOccupied() {
+        return occupied;
+    }
+
+    public boolean isDirty() {
+        return dirty;
+    }
+
+    public boolean isAvailable() {
+        return !occupied && !dirty;
     }
 }
-
