@@ -1,58 +1,34 @@
+
 public class Employee {
 
+    // Attributes
+    private String employeeName;
+    private String jobTitle;
+    private boolean isClockedIn;
 
-        // Private variables
-        private int employeeId;
-        private String name;
-        private String department;
-        private double payRate;
-        private double hoursWorked;
+    // Constructor
+    public Employee(String employeeName, String jobTitle) {
+        this.employeeName = employeeName;
+        this.jobTitle = jobTitle;
+        this.isClockedIn = false;
+    }
 
-        // Constructor
-        public Employee(int employeeId, String name,
-                        String department, double payRate,
-                        double hoursWorked) {
-
-            this.employeeId = employeeId;
-            this.name = name;
-            this.department = department;
-            this.payRate = payRate;
-            this.hoursWorked = hoursWorked;
-        }
-
-        // Getters
-        public int getEmployeeId() {
-            return employeeId;
-        }
-
-        public String getName() {
-            return name;
-        }
-
-        public String getDepartment() {
-            return department;
-        }
-
-        public double getPayRate() {
-            return payRate;
-        }
-
-        public double getHoursWorked() {
-            return hoursWorked;
-        }
-
-        // Derived getters
-        public double getRegularHours() {
-            return Math.min(hoursWorked, 40);
-        }
-
-        public double getOvertimeHours() {
-            return Math.max(hoursWorked - 40, 0);
-        }
-
-        public double getTotalPay() {
-            return (getRegularHours() * payRate)
-                    + (getOvertimeHours() * payRate * 1.5);
+    // Methods
+    public void punchIn() {
+        if (!isClockedIn) {
+            isClockedIn = true;
+            System.out.println(employeeName + " punched in.");
+        } else {
+            System.out.println(employeeName + " is already punched in.");
         }
     }
 
+    public void punchOut() {
+        if (isClockedIn) {
+            isClockedIn = false;
+            System.out.println(employeeName + " punched out.");
+        } else {
+            System.out.println(employeeName + " is not punched in.");
+        }
+    }
+}
