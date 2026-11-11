@@ -17,6 +17,10 @@ public class Employee {
         this.isClockedIn = false;
     }
 
+    public boolean isClockedIn() {
+        return isClockedIn;
+    }
+
     // Punch in using a provided time
     public void punchIn(int time) {
         if (!isClockedIn) {
