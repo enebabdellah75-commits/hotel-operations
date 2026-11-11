@@ -1,4 +1,4 @@
-
+package com.pluralsight;
 
 public class Room {
 
@@ -7,6 +7,22 @@ public class Room {
     private String roomType;
     private boolean isOccupied;
     private boolean isClean;
+
+    public int getRoomNumber() {
+        return roomNumber;
+    }
+
+    public String getRoomType() {
+        return roomType;
+    }
+
+    public boolean isOccupied() {
+        return isOccupied;
+    }
+
+    public boolean isClean() {
+        return isClean;
+    }
 
     // Constructor
     public Room(int roomNumber, String roomType) {
@@ -23,7 +39,7 @@ public class Room {
             isClean = false;
             System.out.println("Guest checked into room " + roomNumber);
         } else {
-            System.out.println("Room is not available for check-in.");
+            System.out.println("com.pluralsight.Room is not available for check-in.");
         }
     }
 
@@ -33,14 +49,14 @@ public class Room {
             isClean = false;
             System.out.println("Guest checked out of room " + roomNumber);
         } else {
-            System.out.println("Room is already vacant.");
+            System.out.println("com.pluralsight.Room is already vacant.");
         }
     }
 
     public void cleanRoom() {
         if (!isOccupied) {
             isClean = true;
-            System.out.println("Room " + roomNumber + " has been cleaned.");
+            System.out.println("com.pluralsight.Room " + roomNumber + " has been cleaned.");
         } else {
             System.out.println("Cannot clean an occupied room.");
         }
